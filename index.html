@@ -64,15 +64,13 @@
         /* ✨ v8.0 修复核心 ✨ */
         input[type="text"] { 
             width: 100%; 
-            padding: 12px 16px; 
+            /* 👇 底部多给 4px 空间，确保 placeholder 的 g/y/p/q 等字母不会被裁剪 */
+            padding: 12px 16px 16px 16px; 
             border: 2px solid transparent; 
             border-radius: 12px; 
             background: rgba(255, 255, 255, 0.6); 
             font-size: 1rem; 
-            
-            /* 👇 关键修正！使用足够的 line-height 确保 g、j、y 等字母的下降部分完整显示 */
             line-height: 1.5; 
-            
             color: var(--text-color); 
             outline: none; 
             transition: 0.3s; 
