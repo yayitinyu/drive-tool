@@ -61,11 +61,9 @@
         .input-group { margin-bottom: 1.5rem; }
         label { display: block; margin-bottom: 0.5rem; color: #64748b; font-weight: 500; font-size: 0.95rem; }
         
-        /* ✨ v8.0 修复核心 ✨ */
         input[type="text"] { 
             width: 100%; 
-            /* 👇 底部多给 4px 空间，确保 placeholder 的 g/y/p/q 等字母不会被裁剪 */
-            padding: 12px 16px 16px 16px; 
+            padding: 12px 16px; 
             border: 2px solid transparent; 
             border-radius: 12px; 
             background: rgba(255, 255, 255, 0.6); 
@@ -74,14 +72,6 @@
             color: var(--text-color); 
             outline: none; 
             transition: 0.3s; 
-        }
-        
-        /* 针对 placeholder (灰色提示字) 的专门微调 */
-        input::placeholder {
-            color: #94a3b8;
-            opacity: 0.8;
-            /* 确保 placeholder 也遵循这个逻辑 */
-            line-height: 1.5; 
         }
         
         /* 结果框同理优化 */
@@ -115,7 +105,7 @@
         
         <div class="input-group">
             <label>粘贴 Google Drive 分享链接 👇</label>
-            <input type="text" id="sourceUrl" placeholder="https://drive.google.com/file/d/..." autocomplete="off">
+            <input type="text" id="sourceUrl" autocomplete="off">
             <button class="btn" onclick="convertLink()">✨ 立即转换</button>
         </div>
 
