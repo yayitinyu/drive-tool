@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive 直链转换工具 ✨</title>
+    <title>Google Drive 直链转换 ✨</title>
     
     <link rel="stylesheet" href="https://fonts.suimori.com/ChillRoundFRegular/result.css">
 
@@ -23,7 +23,6 @@
             padding: 0; 
         }
 
-        /* ✨ 字体应用在这里 */
         body { 
             font-family: "寒蝉全圆体", system-ui, sans-serif;
             font-weight: 400;
@@ -34,12 +33,20 @@
             align-items: center; 
             padding: 20px; 
             overflow-x: hidden; 
-            position: relative; 
+            position: relative;
+            
+            /* 🔒 禁止选中界面文字，防手滑 */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; 
         }
 
-        /* 确保输入框和按钮也继承这个可爱的字体 */
-        input, button, textarea {
+        /* ⚠️ 但是输入框里的内容必须能选，不然怎么复制粘贴呀！ */
+        input, textarea {
             font-family: "寒蝉全圆体", system-ui, sans-serif;
+            -webkit-user-select: text;
+            user-select: text;
         }
         
         /* 氛围光晕 */
@@ -53,8 +60,22 @@
         h1 { text-align: center; color: #334155; margin-bottom: 1.5rem; font-size: 1.8rem; letter-spacing: 1px; }
         
         .input-group { margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 0.5rem; color: #64748b; font-weight: 500; font-size: 0.95rem; } /* 稍微调大一点点让圆体更好看 */
-        input[type="text"] { width: 100%; padding: 12px 16px; border: 2px solid transparent; border-radius: 12px; background: rgba(255, 255, 255, 0.6); font-size: 1rem; color: var(--text-color); outline: none; transition: 0.3s; }
+        label { display: block; margin-bottom: 0.5rem; color: #64748b; font-weight: 500; font-size: 0.95rem; }
+        
+        /* ✨ 修复重点在这里 */
+        input[type="text"] { 
+            width: 100%; 
+            padding: 14px 16px; /* 稍微增加高度 */
+            border: 2px solid transparent; 
+            border-radius: 12px; 
+            background: rgba(255, 255, 255, 0.6); 
+            font-size: 1rem; 
+            line-height: 1.6; /* 🚑 关键！给文字留足呼吸空间，防止切脚 */
+            color: var(--text-color); 
+            outline: none; 
+            transition: 0.3s; 
+        }
+        
         input[type="text"]:focus { background: white; border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(111, 190, 246, 0.2); }
         .btn { width: 100%; padding: 12px; margin-top: 10px; border: none; border-radius: 12px; background: var(--primary-color); color: white; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 12px rgba(111, 190, 246, 0.4); }
         .btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
@@ -62,7 +83,7 @@
         #result-area { display: none; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 1.5rem; }
         .result-item { margin-bottom: 1rem; position: relative; }
         .result-item input { padding-right: 80px; font-size: 0.95rem; }
-        .copy-btn { position: absolute; right: 6px; top: 34px; bottom: 6px; padding: 4px 12px; background: rgba(111, 190, 246, 0.2); color: var(--primary-color); border: none; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+        .copy-btn { position: absolute; right: 6px; top: 36px; bottom: 6px; padding: 4px 12px; background: rgba(111, 190, 246, 0.2); color: var(--primary-color); border: none; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
         .copy-btn:hover { background: var(--primary-color); color: white; }
         
         .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.7); color: white; padding: 10px 20px; border-radius: 20px; font-size: 0.9rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 100; }
