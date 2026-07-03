@@ -1,14 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">LinkCanvas Logo</title>
-  <desc id="desc">由链接与图片画框组成的蓝色几何标志</desc>
+  <desc id="desc">由极光色画框、链接和星点组成的几何标志</desc>
   <defs>
-    <linearGradient id="mark" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3B82F6"/>
-      <stop offset="1" stop-color="#1D4ED8"/>
+    <linearGradient id="mark" x1="8" y1="6" x2="57" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset=".5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#0891B2"/>
     </linearGradient>
+    <linearGradient id="link" x1="20" y1="24" x2="44" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE68A"/>
+      <stop offset=".48" stop-color="#F5D0FE"/>
+      <stop offset="1" stop-color="#CFFAFE"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="translate(18 13) rotate(46) scale(44)">
+      <stop stop-color="#F0ABFC" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#F0ABFC" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <rect x="4" y="4" width="56" height="56" rx="17" fill="url(#mark)"/>
-  <path d="M17 39.5 26.2 30l7.1 7.2 5.2-5.3L47 40.5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="42.5" cy="21.5" r="4.5" fill="#BFDBFE"/>
-  <path d="M25.5 22.5h-2a7 7 0 0 0 0 14h3M38.5 36.5h2a7 7 0 0 0 0-14h-3M27 29.5h10" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="16.25" fill="url(#shine)" stroke="#fff" stroke-opacity=".24" stroke-width="1.5"/>
+  <path d="M16.5 42 25.8 32.5l7.2 7.2 5.4-5.4 9 8.7" fill="none" stroke="#F8FAFC" stroke-opacity=".9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="43" cy="21" r="4.25" fill="#FDE68A"/>
+  <circle cx="18.5" cy="17.5" r="2" fill="#F0ABFC" fill-opacity=".88"/>
+  <path d="M25.5 23h-2a7 7 0 0 0 0 14h3M38.5 37h2a7 7 0 0 0 0-14h-3M27 30h10" fill="none" stroke="url(#link)" stroke-width="3.6" stroke-linecap="round"/>
 </svg>
